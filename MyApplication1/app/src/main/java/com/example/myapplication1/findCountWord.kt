@@ -9,15 +9,17 @@ import java.util.Arrays
 
 
 
-fun countWord(str:String):Map<String,Int>
-{
-    val buf:List<String> = str.lowercase().split(", ",". ","! ","? ","; "," - "," ")
-    val fr = buf.groupingBy { it }.eachCount()
-    return fr
-}
+
 
 
 
 class findCountWord {
+    //функция нахождения слов из строки, и подсчет повторений слов
+    fun countWord(str:String):Map<String,Int>
+    {
+        val words:List<String> = str.lowercase().split(":",",",".","?","!"," - "," ").filter { it!="" }
+        val mapWord = words.groupingBy { it }.eachCount()
+        return mapWord
+    }
 
 }

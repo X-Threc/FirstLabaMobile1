@@ -23,13 +23,16 @@ class MainActivity : AppCompatActivity() {
         tvText2 = findViewById(R.id.textView2)
         button = findViewById(R.id.button1)
         tvText?.setText(text)
-        tvText2?.setText("Чтобы найти кол-во повторений слов в этом тексте нажмите кнопку:\n")
+        tvText2?.setText("Чтобы найти кол-во повторений слов в этом тексте нажмите кнопку \"Start Program\":\n")
     }
 
     fun onMyButtonClick(view: View?) {
         val str:String = tvText?.text.toString()
-        val map = countWord(str)
-        tvText2?.setText("Чтобы найти кол-во повторений слов в этом тексте нажмите кнопку:\n"+map.toString())
+        val fcw = findCountWord()
+        val map =fcw.countWord(str)
+
+        tvText2?.setText("Кол-во повторений слов в этом тексте:\n"+map.toString())
+
     }
 
 
